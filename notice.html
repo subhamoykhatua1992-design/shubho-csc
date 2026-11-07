@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notice Management | Shubho CSC</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        
+body {
+    background: #f1f5fa;
+    font-family: Arial, sans-serif;
+}
+
+.notice-container {
+    max-width: 850px;
+    margin: 35px auto;
+    padding: 15px;
+}
+
+.notice-box {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+    margin-bottom: 22px;
+    border: 1px solid #e5ebf3;
+}
+
+.notice-box input,
+.notice-box textarea {
+    width: 100%;
+    padding: 13px;
+    margin: 10px 0;
+    border: 1px solid #ccd6e2;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+
+.notice-box button {
+    background: #123c70;
+    color: white;
+    border: 0;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.notice-box button:hover {
+    opacity: 0.85;
+}
+
+.notice-item {
+    background: #ffffff;
+    padding: 20px;
+    margin: 14px 0;
+    border-radius: 11px;
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid #123c70;
+}
+
+.notice-item h3 {
+    color: #123c70;
+    margin-bottom: 10px;
+}
+
+.edit-btn {
+    background: #e8f1ff !important;
+    color: #1455a0 !important;
+    border: 1px solid #b8d2f5 !important;
+    margin: 10px 8px 0 0;
+}
+
+.delete-btn {
+    background: #c62828 !important;
+    color: white !important;
+    margin: 10px 8px 0 0;
+}
+
+#message {
+    margin: 12px 0;
+    font-weight: 600;
+}
+
+    </style>
+</head>
+<body>
+
+<div class="notice-container">
+    <h2>📢 Notice Management</h2>
+    <p><a href="dashboard.html">← Back to Dashboard</a></p>
+
+    <div class="notice-box">
+        <h3>নতুন Notice যোগ করুন</h3>
+
+        <form id="noticeForm">
+            <input type="text" id="noticeTitle"
+                   placeholder="Notice-এর শিরোনাম" required>
+
+            <textarea id="noticeText" rows="4"
+                      placeholder="Notice-এর বিস্তারিত লিখুন"
+                      required></textarea>
+
+            <button type="submit" id="saveBtn">Publish Notice</button>
+        </form>
+
+        <div id="message"></div>
+    </div>
+
+    <div class="notice-box">
+        <h3>প্রকাশিত Notice</h3>
+        <div id="noticeList">Loading...</div>
+    </div>
+</div>
+
+<script type="module" src="notice.js"></script>
+</body>
+</html>

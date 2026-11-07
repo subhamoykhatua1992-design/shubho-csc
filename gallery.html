@@ -1,0 +1,195 @@
+
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery Management | Shubho CSC</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #f3f6fb;
+            font-family: Arial, sans-serif;
+            color: #26364a;
+        }
+
+        .gallery-header {
+            background: linear-gradient(120deg, #092c58, #1760a8);
+            color: white;
+            padding: 23px 5%;
+        }
+
+        .gallery-container {
+            max-width: 1000px;
+            margin: 35px auto;
+            padding: 0 18px;
+        }
+
+        .gallery-box {
+            background: white;
+            padding: 25px;
+            border-radius: 14px;
+            border: 1px solid #e3eaf3;
+            box-shadow: 0 5px 20px rgba(20,50,90,.05);
+            margin-bottom: 25px;
+        }
+
+        .gallery-box h3 {
+            color: #123c70;
+            margin-top: 0;
+        }
+
+        .gallery-box input,
+        .gallery-box textarea {
+            width: 100%;
+            padding: 13px;
+            margin: 9px 0 15px;
+            border: 1px solid #ccd6e2;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+
+        .gallery-box textarea {
+            min-height: 90px;
+            resize: vertical;
+        }
+
+        .gallery-box button {
+            background: #123c70;
+            color: white;
+            border: 0;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .gallery-item {
+            background: #f8faff;
+            border: 1px solid #e1e9f3;
+            border-radius: 10px;
+            padding: 16px;
+            margin: 15px 0;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            max-width: 300px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .edit-btn {
+            background: #e8f1ff !important;
+            color: #1455a0 !important;
+            border: 1px solid #b8d2f5 !important;
+            margin: 8px 8px 0 0;
+        }
+
+        .delete-btn {
+            background: #c62828 !important;
+            margin: 8px 8px 0 0;
+        }
+
+        #message {
+            margin-top: 12px;
+            font-weight: bold;
+        }
+
+        @media(max-width: 600px) {
+            .gallery-container {
+                margin: 20px auto;
+            }
+
+            .gallery-box {
+                padding: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="gallery-header">
+        <h2>🖼️ Gallery Management</h2>
+        <p>Shubho CSC Admin Panel</p>
+    </header>
+
+    <main class="gallery-container">
+
+        <p>
+            <a href="dashboard.html">← Back to Dashboard</a>
+        </p>
+
+        <section class="gallery-box">
+
+            <h3 id="formHeading">নতুন ছবি যোগ করুন</h3>
+
+            <form id="galleryForm">
+
+                <label>ছবির নাম / Title</label>
+                <input
+                    type="text"
+                    id="galleryTitle"
+                    placeholder="যেমন: Shubho CSC Office"
+                    required
+                >
+
+                <label>ছবির File Path</label>
+                <input
+                    type="text"
+                    id="galleryImage"
+                    placeholder="যেমন: images/shop-front.jpg"
+                    required
+                >
+
+                <label>ছবির বিবরণ</label>
+                <textarea
+                    id="galleryDescription"
+                    placeholder="ছবির সংক্ষিপ্ত বিবরণ লিখুন"
+                ></textarea>
+
+                <button type="submit" id="saveBtn">
+                    Publish Photo
+                </button>
+
+                <button
+                    type="button"
+                    id="cancelBtn"
+                    class="edit-btn"
+                    style="display:none;"
+                >
+                    Cancel Edit
+                </button>
+
+            </form>
+
+            <div id="message"></div>
+
+        </section>
+
+        <section class="gallery-box">
+
+            <h3>প্রকাশিত ছবি</h3>
+
+            <div id="galleryList">
+                Loading...
+            </div>
+
+        </section>
+
+    </main>
+
+    <script type="module" src="gallery.js"></script>
+
+</body>
+</html>

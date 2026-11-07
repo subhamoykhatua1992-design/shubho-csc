@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rate List Management | Shubho CSC</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #f3f6fb;
+            font-family: Arial, sans-serif;
+            color: #26364a;
+        }
+
+        .rate-header {
+            background: linear-gradient(120deg, #092c58, #1760a8);
+            color: white;
+            padding: 23px 5%;
+        }
+
+        .rate-header h2 {
+            margin: 0;
+        }
+
+        .rate-container {
+            max-width: 950px;
+            margin: 35px auto;
+            padding: 0 18px;
+        }
+
+        .rate-box {
+            background: white;
+            padding: 25px;
+            border-radius: 14px;
+            border: 1px solid #e3eaf3;
+            box-shadow: 0 5px 20px rgba(20,50,90,.05);
+            margin-bottom: 25px;
+        }
+
+        .rate-box h3 {
+            color: #123c70;
+            margin-top: 0;
+        }
+
+        .rate-box input {
+            width: 100%;
+            padding: 13px;
+            margin: 9px 0 15px;
+            border: 1px solid #ccd6e2;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+
+        .rate-box button {
+            background: #123c70;
+            color: white;
+            border: 0;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .rate-item {
+            background: #f8faff;
+            border: 1px solid #e1e9f3;
+            border-left: 4px solid #1760a8;
+            border-radius: 10px;
+            padding: 18px;
+            margin: 13px 0;
+        }
+
+        .rate-item h4 {
+            color: #123c70;
+            margin: 0 0 8px;
+        }
+
+        .edit-btn {
+            background: #e8f1ff !important;
+            color: #1455a0 !important;
+            border: 1px solid #b8d2f5 !important;
+            margin: 8px 8px 0 0;
+        }
+
+        .delete-btn {
+            background: #c62828 !important;
+            margin: 8px 8px 0 0;
+        }
+
+        #message {
+            margin-top: 12px;
+            font-weight: bold;
+        }
+
+        @media(max-width: 600px) {
+            .rate-container {
+                margin: 20px auto;
+            }
+
+            .rate-box {
+                padding: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="rate-header">
+        <h2>💰 Rate List Management</h2>
+        <p>Shubho CSC Admin Panel</p>
+    </header>
+
+    <main class="rate-container">
+
+        <p>
+            <a href="dashboard.html">← Back to Dashboard</a>
+        </p>
+
+        <section class="rate-box">
+
+            <h3 id="formHeading">নতুন Rate যোগ করুন</h3>
+
+            <form id="rateForm">
+
+                <label>পরিষেবার নাম</label>
+                <input
+                    type="text"
+                    id="rateTitle"
+                    placeholder="যেমন: PAN Card Services"
+                    required
+                >
+
+                <label>পরিষেবার মূল্য</label>
+                <input
+                    type="text"
+                    id="ratePrice"
+                    placeholder="যেমন: ₹150 অথবা যোগাযোগ করুন"
+                    required
+                >
+
+                <button type="submit" id="saveBtn">
+                    Publish Rate
+                </button>
+
+                <button
+                    type="button"
+                    id="cancelBtn"
+                    class="edit-btn"
+                    style="display:none;"
+                >
+                    Cancel Edit
+                </button>
+
+            </form>
+
+            <div id="message"></div>
+
+        </section>
+
+        <section class="rate-box">
+
+            <h3>প্রকাশিত Rate List</h3>
+
+            <div id="rateList">Loading...</div>
+
+        </section>
+
+    </main>
+
+    <script type="module" src="rates.js"></script>
+
+</body>
+</html>

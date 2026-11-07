@@ -1,0 +1,248 @@
+
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard | Shubho CSC</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #f3f6fb;
+            font-family: Arial, sans-serif;
+            color: #26364a;
+        }
+
+        .dashboard-header {
+            background: linear-gradient(120deg, #092c58, #1760a8);
+            color: white;
+            padding: 25px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .brand h2 {
+            margin: 0;
+            font-size: 26px;
+            letter-spacing: 1px;
+        }
+
+        .brand p {
+            margin: 7px 0 0;
+            color: #d8e9ff;
+            font-size: 14px;
+        }
+
+        .logout-btn {
+            background: #ffffff;
+            color: #c62828;
+            border: none;
+            padding: 11px 22px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .logout-btn:hover {
+            background: #ffecec;
+        }
+
+        .dashboard-container {
+            max-width: 1150px;
+            margin: 35px auto;
+            padding: 0 20px;
+        }
+
+        .welcome-box {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid #e3eaf3;
+            box-shadow: 0 5px 20px rgba(20,50,90,.05);
+            margin-bottom: 30px;
+        }
+
+        .welcome-box h2 {
+            color: #123c70;
+            margin: 0 0 12px;
+        }
+
+        .welcome-box p {
+            color: #68778a;
+            line-height: 1.6;
+        }
+
+        .section-title {
+            color: #123c70;
+            margin-bottom: 20px;
+            font-size: 21px;
+        }
+
+        .admin-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 22px;
+        }
+
+        .admin-card {
+            background: white;
+            padding: 25px;
+            border-radius: 14px;
+            border: 1px solid #e3eaf3;
+            box-shadow: 0 5px 18px rgba(20,50,90,.04);
+            transition: .3s ease;
+        }
+
+        .admin-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(20,50,90,.10);
+        }
+
+        .card-icon {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .admin-card h3 {
+            color: #123c70;
+            margin: 0 0 12px;
+            font-size: 18px;
+        }
+
+        .admin-card p {
+            color: #738094;
+            font-size: 14px;
+            line-height: 1.6;
+            min-height: 45px;
+        }
+
+        .admin-card a {
+            display: inline-block;
+            background: #123c70;
+            color: white;
+            padding: 11px 18px;
+            border-radius: 7px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            margin-top: 8px;
+        }
+
+        .admin-card a:hover {
+            background: #1760a8;
+        }
+
+        .dashboard-footer {
+            text-align: center;
+            padding: 25px 15px;
+            color: #8995a5;
+            font-size: 13px;
+        }
+
+        @media(max-width: 600px) {
+            .dashboard-header {
+                padding: 20px;
+            }
+
+            .brand h2 {
+                font-size: 21px;
+            }
+
+            .dashboard-container {
+                margin: 20px auto;
+                padding: 0 14px;
+            }
+
+            .welcome-box {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="dashboard-header">
+
+        <div class="brand">
+            <h2>SHUBHO CSC</h2>
+            <p>Digital Education Centre | Admin Panel</p>
+        </div>
+
+        <button class="logout-btn" id="logoutBtn">
+            Logout ↗
+        </button>
+
+    </header>
+
+    <main class="dashboard-container">
+
+        <section class="welcome-box">
+
+            <h2>স্বাগতম Admin Panel-এ!</h2>
+
+            <p>
+                Shubho CSC & Digital Education Centre
+                পরিচালনার জন্য আপনার Dashboard।
+            </p>
+
+            <p id="adminEmail"></p>
+
+        </section>
+
+        <h2 class="section-title">Management Dashboard</h2>
+
+        <section class="admin-grid">
+
+            <div class="admin-card">
+                <div class="card-icon">📢</div>
+                <h3>Notice Management</h3>
+                <p>Website-এর Notice প্রকাশ, Edit ও Delete করুন।</p>
+                <a href="notice.html">Manage Notice →</a>
+            </div>
+
+            <div class="admin-card">
+                <div class="card-icon">💼</div>
+                <h3>Services Management</h3>
+                <p>Website-এর পরিষেবার তথ্য পরিচালনা করুন।</p>
+              <a href="services.html">Manage Services →</a>
+            </div>
+
+            <div class="admin-card">
+                <div class="card-icon">💰</div>
+                <h3>Rate List Management</h3>
+                <p>পরিষেবার মূল্য তালিকা পরিচালনা করুন।</p>
+               <a href="rates.html">Manage Rate List →</a>
+            </div>
+
+           <div class="admin-card">
+    <div class="card-icon">🖼️</div>
+    <h3>Gallery Management</h3>
+    <p>Website-এর ছবি পরিচালনা করুন।</p>
+    <a href="gallery.html">Manage Gallery →</a>
+</div>
+
+        </section>
+
+    </main>
+
+    <footer class="dashboard-footer">
+        © 2026 Shubho CSC & Digital Education Centre.
+        All Rights Reserved.
+    </footer>
+
+    <script type="module" src="dashboard.js"></script>
+
+</body>
+</html>
