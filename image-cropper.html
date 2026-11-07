@@ -1,0 +1,328 @@
+
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Professional Image Cropper | Shubho CSC</title>
+
+    <meta name="description" content="Free Professional Online Image Cropper by Shubho CSC">
+
+    <link rel="stylesheet" href="image-cropper.css">
+
+    <!-- Cropper.js Library -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.2/cropper.min.css">
+</head>
+
+<body>
+
+    <header class="cropper-header">
+        <h2>শুভ CSC</h2>
+        <p>PROFESSIONAL IMAGE CROPPER</p>
+        <a href="index.html">← Back to Home</a>
+    </header>
+
+    <main class="cropper-container">
+
+        <div class="cropper-title">
+            <h1>Online Image Cropper</h1>
+            <p>Upload, Crop, Edit & Download Your Photo</p>
+        </div>
+<!-- PROFESSIONAL PHOTO EDITOR -->
+
+<section class="professional-editor">
+
+    <div class="editor-header">
+        <h2>🎨 Shubho CSC Professional Photo Editor</h2>
+        <p>Advanced Photo Editing Studio</p>
+    </div>
+
+    <div class="editor-toolbar">
+
+        <button id="newProject">＋ New</button>
+        <button id="undoEdit">↶ Undo</button>
+        <button id="redoEdit">↷ Redo</button>
+        <button id="zoomEditor">🔍 Zoom</button>
+
+    </div>
+
+    <div class="editor-workspace">
+
+        <div class="editor-left-panel">
+            <h3>Tools</h3>
+
+            <button id="editorMove">🖱️ Move</button>
+            <button id="editorZoomIn">＋ Zoom In</button>
+<button id="editorZoomOut">－ Zoom Out</button>
+<button id="editorReset">⟲ Reset</button>
+            <button>✂️ Crop</button>
+            
+            <button id="editorDeleteText">🗑️ Delete Selected Text</button>
+<button id="editorClearText">❌ Clear All Text</button>
+            <div class="text-properties">
+
+    <label>Text Color</label>
+    <input type="color" id="editorTextColor" value="#ff0000">
+
+    <label>Font Size</label>
+    <input type="number" id="editorFontSize" value="28" min="8" max="150">
+
+    <label>Font Weight</label>
+    <select id="editorFontWeight">
+        <option value="normal">Normal</option>
+        <option value="bold" selected>Bold</option>
+    </select>
+
+</div>
+            <button>🖼️ Image</button>
+            <button id="editorBackgroundBtn">🎨 Background</button>
+
+<input
+    type="color"
+    id="editorBackgroundColor"
+    value="#ffffff"
+>
+            <button id="editorResizeBtn">📐 Resize</button>
+
+<div class="resize-properties">
+
+    <label>Image Size</label>
+
+    <input
+        type="range"
+        id="editorImageSize"
+        min="20"
+        max="100"
+        value="100"
+    >
+
+    <span id="editorImageSizeValue">100%</span>
+
+</div>
+        </div>
+
+        <div class="editor-canvas-area">
+
+            <!-- FRONT BACK IMAGE UPLOAD -->
+
+<div class="dual-upload">
+
+    <label for="frontImageUpload">
+        📷 Upload Front Image
+    </label>
+    <input type="file" id="frontImageUpload" accept="image/*">
+
+    <label for="backImageUpload">
+        📷 Upload Back Image
+    </label>
+    <input type="file" id="backImageUpload" accept="image/*">
+
+</div>
+
+            <div class="canvas-tabs">
+                <button id="frontTab">Front Side</button>
+                <button id="backTab">Back Side</button>
+            </div>
+
+            <div class="editor-canvas">
+                <p>Upload Image to Start Editing</p>
+            </div>
+
+        </div>
+
+        <div class="editor-right-panel">
+            <h3>Layers</h3>
+            <div id="editorLayers">
+                <p>Background Layer</p>
+            </div>
+
+            <hr>
+
+            <h3>Properties</h3>
+            <p>Select an object to edit.</p>
+        </div>
+
+    </div>
+
+</section>
+        <section class="cropper-workspace">
+
+            <div class="upload-area">
+
+    <label for="imageInput">
+        📁 Select Your Image
+    </label>
+
+    <input
+        type="file"
+        id="imageInput"
+        accept="image/jpeg,image/png,image/webp"
+    >
+
+    <p class="upload-note">
+        Supported Formats: JPG, JPEG, PNG, WEBP |
+        Maximum File Size: 10 MB
+    </p>
+
+    <button type="button" id="clearImage" class="clear-image-btn">
+        ✖ Clear Image
+    </button>
+
+    <div id="imageInfo" class="image-info">
+        Image Information will appear here.
+    </div>
+
+</div>
+
+<div class="editor-area">
+            
+
+                <div class="image-area">
+                    <p id="emptyMessage">📷 Please Upload Your Photo</p>
+                    <img id="cropImage" alt="Image Preview">
+                </div>
+
+                <div class="editor-controls">
+
+                    <h3>Crop Settings</h3>
+                    <!-- PROFESSIONAL PHOTO ADJUSTMENTS -->
+
+<div class="photo-adjustments">
+
+    <h3>🎨 Photo Adjustments</h3>
+
+    <label>Brightness</label>
+    <input type="range" id="brightness"
+           min="0" max="200" value="100">
+
+    <label>Contrast</label>
+    <input type="range" id="contrast"
+           min="0" max="200" value="100">
+
+    <label>Saturation</label>
+    <input type="range" id="saturation"
+           min="0" max="200" value="100">
+
+    <label>Grayscale</label>
+    <input type="range" id="grayscale"
+           min="0" max="100" value="0">
+
+    <button type="button" id="resetAdjustments">
+        ⟲ Reset Adjustments
+    </button>
+    <button type="button" id="resetAll">⟲ Reset All Settings</button>
+
+    <hr>
+
+    <h3>🖌️ Background Colour</h3>
+    <hr>
+
+<h3>📐 Custom Photo Size</h3>
+<label>Size Unit</label>
+
+<select id="sizeUnit">
+    <label>Print Resolution (DPI)</label>
+
+<select id="photoDPI">
+    <option value="72">72 DPI</option>
+    <option value="150">150 DPI</option>
+    <option value="300" selected>300 DPI (High Quality)</option>
+    <option value="600">600 DPI (Professional)</option>
+</select>
+    <option value="px">Pixels (PX)</option>
+    <option value="inch">Inches</option>
+    <option value="cm">Centimeters (CM)</option>
+    <option value="mm">Millimeters (MM)</option>
+</select>
+
+<label>Width (Pixels)</label>
+<input type="number" id="customWidth"
+       value="600" min="1" max="10000">
+
+<label>Height (Pixels)</label>
+<input type="number" id="customHeight"
+       value="600" min="1" max="10000">
+
+<button type="button" id="customSizeBtn">
+    Apply Custom Size
+</button>
+
+    <div class="background-options">
+
+        <button type="button" class="bg-color"
+                data-color="#ffffff">White</button>
+
+        <button type="button" class="bg-color"
+                data-color="#0000ff">Blue</button>
+
+        <button type="button" class="bg-color"
+                data-color="#ff0000">Red</button>
+
+        <button type="button" class="bg-color"
+                data-color="#00ff00">Green</button>
+
+    </div>
+
+    <label>Custom Background Colour</label>
+    <input type="color" id="customBackground"
+           value="#ffffff">
+
+</div>
+
+                    <div class="control-buttons">
+                        <button id="freeCrop">Free Crop</button>
+                        <button id="passportCrop">Passport</button>
+                        <button id="twoInchCrop">2×2 Inch</button>
+                    </div>
+
+                    <div class="control-buttons">
+    <button id="zoomIn">＋ Zoom In</button>
+    <button id="zoomOut">－ Zoom Out</button>
+    <button id="rotateLeft">↶ Rotate</button>
+    <button id="rotateRight">↷ Rotate</button>
+</div>
+
+<div class="control-buttons">
+    <button id="resetCrop">⟲ Reset Crop</button>
+    <button id="flipHorizontal">↔ Flip Horizontal</button>
+</div>
+
+
+                    <div class="download-buttons">
+                        <button id="downloadJPG">Download JPG</button>
+                        <button id="downloadPNG">Download PNG</button>
+                    </div>
+
+                    <button id="a4Layout">Create A4 Photo Sheet</button>
+
+                </div>
+
+            </div>
+            <!-- ID CARD FRONT & BACK A4 PRINT -->
+
+<section class="id-card-print">
+
+    <h2>🪪 ID Card Front & Back A4 Print</h2>
+
+    <button id="createIdCardA4">
+        Create Front & Back A4 Sheet
+    </button>
+
+    <div id="idCardA4Preview"></div>
+
+</section>
+
+            <div id="a4Preview"></div>
+
+        </section>
+
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.2/cropper.min.js"></script>
+
+    <script src="image-cropper.js"></script>
+
+</body>
+</html>
